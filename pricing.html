@@ -288,70 +288,135 @@
     </section>
 
     <!-- Plan Comparison Detail Table -->
-    <section class="section section-dark">
+    <section class="section section-dark" id="comparison-matrix">
       <div class="container">
         <div class="section-header">
-          <div class="badge">Direct Feature Comparison</div>
+          <div class="badge">Side-by-Side Evaluation</div>
           <h2 class="section-title">Package Comparison Matrix</h2>
           <p class="section-subtitle">
-            An overview of features across Silver, Gold, and Platinum subscriptions.
+            Compare features across Silver, Gold, and Platinum subscriptions to choose the exact level of institutional precision for your capital.
           </p>
         </div>
 
-        <div style="overflow-x: auto; background: var(--bg-secondary); border-radius: var(--radius-lg); border: 1px solid var(--border-light); padding: 24px;">
-          <table style="width: 100%; border-collapse: collapse; min-width: 600px; text-align: left;">
+        <!-- Mobile Scroll Indicator -->
+        <div class="matrix-mobile-hint" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+          <span>Scroll horizontally to compare all features &rarr;</span>
+        </div>
+
+        <div class="comparison-matrix-wrapper">
+          <table class="comparison-table">
             <thead>
-              <tr style="border-bottom: 2px solid var(--border-subtle);">
-                <th style="padding: 16px; color: #FFFFFF; font-size: 1.05rem;">Advisory Feature</th>
-                <th style="padding: 16px; color: #FFFFFF; font-size: 1.05rem; text-align: center;">Silver</th>
-                <th style="padding: 16px; color: #FFFFFF; font-size: 1.05rem; text-align: center;">Gold</th>
-                <th style="padding: 16px; color: var(--accent-green); font-size: 1.05rem; text-align: center;">Platinum</th>
+              <tr>
+                <th class="matrix-th-feature">Advisory Feature</th>
+                <th class="matrix-th-plan">
+                  <div class="plan-header-name">Silver</div>
+                  <div class="plan-header-price">&#8377;4,999<span>/mo</span></div>
+                  <div class="plan-header-badge-sub">Essential Coverage</div>
+                </th>
+                <th class="matrix-th-plan">
+                  <div class="plan-header-name">Gold</div>
+                  <div class="plan-header-price">&#8377;8,999<span>/mo</span></div>
+                  <div class="plan-header-badge-sub">High Volatility</div>
+                </th>
+                <th class="matrix-th-plan matrix-th-featured">
+                  <div class="matrix-popular-ribbon">⭐ MOST POPULAR</div>
+                  <div class="plan-header-name" style="color: var(--accent-green);">Platinum</div>
+                  <div class="plan-header-price">&#8377;14,999<span>/mo</span></div>
+                  <div class="plan-header-badge-sub" style="color: var(--accent-green);">Institutional Suite</div>
+                </th>
               </tr>
             </thead>
             <tbody>
-              <tr style="border-bottom: 1px solid var(--border-subtle);">
-                <td style="padding: 16px; color: #A7B0BE;">Daily Alert Frequency</td>
-                <td style="padding: 16px; text-align: center; color: #FFFFFF;">1 Alert / Day</td>
-                <td style="padding: 16px; text-align: center; color: #FFFFFF;">1 Alert / Day</td>
-                <td style="padding: 16px; text-align: center; color: var(--accent-green); font-weight: 700;">Real-Time Real-Session</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--border-subtle);">
-                <td style="padding: 16px; color: #A7B0BE;">Asset Coverage</td>
-                <td style="padding: 16px; text-align: center; color: #FFFFFF;">Nifty / Bank Nifty</td>
-                <td style="padding: 16px; text-align: center; color: #FFFFFF;">Nifty / Bank Nifty</td>
-                <td style="padding: 16px; text-align: center; color: var(--accent-green); font-weight: 700;">Nifty &amp; Bank Nifty Priority</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--border-subtle);">
-                <td style="padding: 16px; color: #A7B0BE;">Targets &amp; Stop-Loss Levels</td>
-                <td style="padding: 16px; text-align: center; color: var(--accent-green); font-weight: 700;">&#10003;</td>
-                <td style="padding: 16px; text-align: center; color: var(--accent-green); font-weight: 700;">&#10003;</td>
-                <td style="padding: 16px; text-align: center; color: var(--accent-green); font-weight: 700;">&#10003; Dynamic Trailing</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--border-subtle);">
-                <td style="padding: 16px; color: #A7B0BE;">Risk Management Guidance</td>
-                <td style="padding: 16px; text-align: center; color: #FFFFFF;">Basic</td>
-                <td style="padding: 16px; text-align: center; color: #FFFFFF;">Basic</td>
-                <td style="padding: 16px; text-align: center; color: var(--accent-green); font-weight: 700;">Advanced &amp; Tailored</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--border-subtle);">
-                <td style="padding: 16px; color: #A7B0BE;">Technical Analysis Reports</td>
-                <td style="padding: 16px; text-align: center; color: #7D8899;">&mdash;</td>
-                <td style="padding: 16px; text-align: center; color: #FFFFFF;">Introduction</td>
-                <td style="padding: 16px; text-align: center; color: var(--accent-green); font-weight: 700;">Full Institutional Suite</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--border-subtle);">
-                <td style="padding: 16px; color: #A7B0BE;">Custom Trade Plans</td>
-                <td style="padding: 16px; text-align: center; color: #7D8899;">&mdash;</td>
-                <td style="padding: 16px; text-align: center; color: #7D8899;">&mdash;</td>
-                <td style="padding: 16px; text-align: center; color: var(--accent-green); font-weight: 700;">&#10003; Included</td>
+              <tr>
+                <td class="matrix-feature-name">Daily Alert Frequency</td>
+                <td class="matrix-cell">1 Alert / Day</td>
+                <td class="matrix-cell">1 Alert / Day</td>
+                <td class="matrix-cell matrix-cell-featured">
+                  <span class="matrix-tag tag-emerald">Real-Time Real-Session</span>
+                </td>
               </tr>
               <tr>
-                <td style="padding: 16px; color: #A7B0BE;">Support Desk</td>
-                <td style="padding: 16px; text-align: center; color: #FFFFFF;">Email &amp; Chat</td>
-                <td style="padding: 16px; text-align: center; color: #FFFFFF;">Email &amp; Chat</td>
-                <td style="padding: 16px; text-align: center; color: var(--accent-green); font-weight: 700;">WhatsApp &amp; Priority Call</td>
+                <td class="matrix-feature-name">Asset Coverage</td>
+                <td class="matrix-cell">Nifty / Bank Nifty</td>
+                <td class="matrix-cell">Nifty / Bank Nifty</td>
+                <td class="matrix-cell matrix-cell-featured">
+                  <span class="matrix-tag tag-emerald">Nifty &amp; Bank Nifty Priority</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="matrix-feature-name">Targets &amp; Stop-Loss Levels</td>
+                <td class="matrix-cell">
+                  <span class="matrix-check" title="Included">&#10003;</span>
+                </td>
+                <td class="matrix-cell">
+                  <span class="matrix-check" title="Included">&#10003;</span>
+                </td>
+                <td class="matrix-cell matrix-cell-featured">
+                  <span class="matrix-tag tag-emerald">&#10003; Dynamic Trailing</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="matrix-feature-name">Risk Management Guidance</td>
+                <td class="matrix-cell">Standard Protocol</td>
+                <td class="matrix-cell">Standard Protocol</td>
+                <td class="matrix-cell matrix-cell-featured">
+                  <span class="matrix-tag tag-emerald">Advanced &amp; Tailored Sizing</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="matrix-feature-name">Technical Analysis Reports</td>
+                <td class="matrix-cell">
+                  <span class="matrix-dash">&mdash;</span>
+                </td>
+                <td class="matrix-cell">Introductory Briefs</td>
+                <td class="matrix-cell matrix-cell-featured">
+                  <span class="matrix-tag tag-emerald">Full Institutional Suite</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="matrix-feature-name">Custom Trade Plans</td>
+                <td class="matrix-cell">
+                  <span class="matrix-dash">&mdash;</span>
+                </td>
+                <td class="matrix-cell">
+                  <span class="matrix-dash">&mdash;</span>
+                </td>
+                <td class="matrix-cell matrix-cell-featured">
+                  <span class="matrix-tag tag-emerald">&#10003; Personalized Sizing</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="matrix-feature-name">Dedicated Support Desk</td>
+                <td class="matrix-cell">Email &amp; Web Chat</td>
+                <td class="matrix-cell">Email &amp; Web Chat</td>
+                <td class="matrix-cell matrix-cell-featured">
+                  <span class="matrix-tag tag-emerald">WhatsApp &amp; Priority Call</span>
+                </td>
               </tr>
             </tbody>
+            <tfoot>
+              <tr>
+                <td class="matrix-feature-name" style="font-weight: 700; color: #FFFFFF;">Select Your Plan</td>
+                <td class="matrix-cell">
+                  <a href="contact.html?plan=Silver" class="btn btn-outline btn-sm magnetic-btn" style="width: 100%; font-size: 0.88rem; padding: 10px 16px;">
+                    Choose Silver
+                  </a>
+                </td>
+                <td class="matrix-cell">
+                  <a href="contact.html?plan=Gold" class="btn btn-outline btn-sm magnetic-btn" style="width: 100%; font-size: 0.88rem; padding: 10px 16px;">
+                    Choose Gold
+                  </a>
+                </td>
+                <td class="matrix-cell matrix-cell-featured">
+                  <a href="contact.html?plan=Platinum" class="btn btn-primary btn-sm magnetic-btn" style="width: 100%; font-size: 0.88rem; padding: 10px 16px;">
+                    Choose Platinum &rarr;
+                  </a>
+                </td>
+              </tr>
+            </tfoot>
           </table>
         </div>
       </div>

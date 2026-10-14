@@ -13,8 +13,12 @@
 (function () {
   'use strict';
 
-  // Check device capabilities and user motion preferences
-  const isTouchDevice = window.matchMedia('(hover: none) or (pointer: coarse)').matches;
+  // Check device capabilities and user motion preferences (disabled on mobile & tablets <= 1024px)
+  const isTouchDevice = 
+    window.matchMedia('(hover: none) or (pointer: coarse)').matches ||
+    ('ontouchstart' in window) ||
+    (navigator.maxTouchPoints > 0) ||
+    window.innerWidth <= 1024;
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   if (isTouchDevice || prefersReducedMotion) {
